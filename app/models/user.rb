@@ -9,14 +9,14 @@ class User < ActiveRecord::Base
   has_many :meals
 
   has_attached_file :profile_photo,
-                    :styles => {  :medium => "300x300>",
-                                  :thumb => "100x100>" },
+                    :styles => {  :medium => "300x300#",
+                                  :thumb => "100x100#" },
                                   :default_url => "https://s3.amazonaws.com/beattadashi/users/profile_photos/000/000/005/medium/placeholder.jpg"
   validates_attachment_content_type :profile_photo, :content_type => /\Aimage\/.*\Z/
 
   def check_for_meal_today
-    todays_date = Date.today.to_s
-    self.meals.last.created_at.to_s.include?(todays_date) ? true : false
+    todays_date = Time.now.end_of_day.utc.to_s.gsub(/\s.*/, '')
+    self.meals.last.created_at.to_s.include?(todays_date.gsub(/\s.*/, '')) ? true : false
   end
 
   def get_meals_since_sunday

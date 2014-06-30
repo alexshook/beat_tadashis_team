@@ -10,26 +10,26 @@ g3 = Goal.create(name: 'Gain Muscle', desc: 'High protein, lean meals to help bu
 
 # ------------------------------------------------------------------
 
-# u1 = User.create(email: 'jesse@ham.co', password: 'password',
-#                  password_confirmation: 'password', name: 'Jesse Sessler',
-#                  goal_description: "Mass protein intake bro", admin: true)
-# u2 = User.create(email: 'stephen@ham.co', password: 'password',
-#                  password_confirmation: 'password', name: 'Stephen Marsh',
-#                  goal_description: "Get totally ripped brah", admin: true)
-# u3 = User.create(email: 'alex@ham.co', password: 'password',
-#                  password_confirmation: 'password', name: 'Alexandra Shook',
-#                  goal_description: "Up my kale intake", admin: false)
-# u4 = User.create(email: 'jason@ham.co', password: 'password',
-#                  password_confirmation: 'password', name: 'Jason Leibowitz',
-#                  goal_description: "Look great naked", admin: false)
-# u5 = User.create(email: 'paul@ham.co', password: 'password',
-#                  password_confirmation: 'password', name: 'Paul Lee',
-#                  goal_description: "Lose weight", admin: false)
-# u6 = User.create(email: 'spencer@ham.co', password: 'password',
-#                  password_confirmation: 'password', name: 'Spencer Stebbins',
-#                  goal_description: "Up my 16-pack to a 20-pack", admin: false)
+u1 = User.create(email: 'jesse@ham.co', password: 'password',
+                 password_confirmation: 'password', name: 'Jesse Sessler',
+                 goal_description: "Mass protein intake bro", admin: true)
+u2 = User.create(email: 'stephen@ham.co', password: 'password',
+                 password_confirmation: 'password', name: 'Stephen Marsh',
+                 goal_description: "Get totally ripped brah", admin: true)
+u3 = User.create(email: 'alex@ham.co', password: 'password',
+                 password_confirmation: 'password', name: 'Alexandra Shook',
+                 goal_description: "Up my kale intake", admin: false)
+u4 = User.create(email: 'jason@ham.co', password: 'password',
+                 password_confirmation: 'password', name: 'Jason Leibowitz',
+                 goal_description: "Look great naked", admin: false)
+u5 = User.create(email: 'paul@ham.co', password: 'password',
+                 password_confirmation: 'password', name: 'Paul Lee',
+                 goal_description: "Lose weight", admin: false)
+u6 = User.create(email: 'spencer@ham.co', password: 'password',
+                 password_confirmation: 'password', name: 'Spencer Stebbins',
+                 goal_description: "Up my 16-pack to a 20-pack", admin: false)
 
-# c1.users << u1 << u2 << u3 << u4 << u5 << u6
+c1.users << u1 << u2 << u3 << u4 << u5 << u6
 
 
 # Jesse Seeds
