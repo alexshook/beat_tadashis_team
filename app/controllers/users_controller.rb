@@ -2,10 +2,10 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @user = current_user
-    @meals = @user.meals_since_sunday
-    @meal = @meals.shift
-		@company_meals = @user.company.meals_since_sunday_sorted
+    @added_meal_today = current_user.check_for_meal_today
+    @meals = current_user.get_meals_since_sunday
+    @todays_meal = @meals.shift
+    @company_meals = current_user.company.meals_since_sunday_sorted
   end
 
 end

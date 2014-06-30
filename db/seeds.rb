@@ -51,9 +51,9 @@ g3 = Goal.create(name: 'Gain Muscle', desc: 'High protein, lean meals to help bu
 # file3 = File.open("/Users/jason/Desktop/pizza.jpg")
 
 # Alex seeds
-# file1 = File.open("/Users/alexshook/Dropbox/beattadashi.jpg")
-# file2 = File.open("/Users/alexshook/Dropbox/beattadashi.jpg")
-# file3 = File.open("/Users/alexshook/Dropbox/beattadashi.jpg")
+file1 = File.open("/Users/alexshook/Dropbox/beattadashi.jpg")
+file2 = File.open("/Users/alexshook/Dropbox/beattadashi.jpg")
+file3 = File.open("/Users/alexshook/Dropbox/beattadashi.jpg")
 
 ##Paul Seeds
 # file1 = File.open("/Users/pjwl/Projects/pjwl33.github.io/images/personal.png")
@@ -62,27 +62,27 @@ g3 = Goal.create(name: 'Gain Muscle', desc: 'High protein, lean meals to help bu
 
 # users = [u1, u2, u3, u4, u5, u6]
 
-# 10.times do |i|
-#  Meal.create(comment: "Healthy Meal #{i}", ingredients: 'tomato, salad', user: User.all.sample, goal_id: g1.id, meal_photo: file1)
-# end
+10.times do |i|
+ Meal.create(comment: "Healthy Meal #{i}", ingredients: 'tomato, salad', user: User.all.sample, goal_id: g1.id, meal_photo: file1)
+end
 
-# 10.times do |i|
-#  Meal.create(comment: "Healthy Meal #{i}", ingredients: 'cucumber, salad', user: User.all.sample, goal_id: g2.id, meal_photo: file2)
-# end
+10.times do |i|
+ Meal.create(comment: "Healthy Meal #{i}", ingredients: 'cucumber, salad', user: User.all.sample, goal_id: g2.id, meal_photo: file2)
+end
 
-# 10.times do |i|
-#  Meal.create(comment: "Healthy Meal #{i}", ingredients: 'carrots, salad', user: User.all.sample, goal_id: g3.id, meal_photo: file3)
-# end
+10.times do |i|
+ Meal.create(comment: "Healthy Meal #{i}", ingredients: 'carrots, salad', user: User.all.sample, goal_id: g3.id, meal_photo: file3)
+end
 
-# Meal.all.each do |meal|
-#  5.times do |i|
-#     random_nums = [1, 2, 3, 4, 5]
-#     rating = random_nums.sample
-#    Rating.create(vote_rating: rating, user_id: i.next, meal_id: meal.id)
-#  end
-# end
+Meal.all.each do |meal|
+ 5.times do |i|
+    random_nums = [1, 2, 3, 4, 5]
+    rating = random_nums.sample
+   Rating.create(vote_rating: rating, user_id: i.next, meal_id: meal.id)
+ end
+end
 
-# Meal.all.each do |meal|
-#  Company.find_by(name: "HAM Corporation").meals << meal
-# end
+Meal.all.each do |meal|
+ Company.find_by(name: "HAM Corporation").meals << meal
+end
 

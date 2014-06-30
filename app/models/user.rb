@@ -14,7 +14,12 @@ class User < ActiveRecord::Base
                                   :default_url => "https://s3.amazonaws.com/beattadashi/users/profile_photos/000/000/005/medium/placeholder.jpg"
   validates_attachment_content_type :profile_photo, :content_type => /\Aimage\/.*\Z/
 
-  def meals_since_sunday
+  def check_for_meal_today
+    todays_date = Date.today.to_s
+    self.meals.last.created_at.to_s.include?(todays_date) ? true : false
+  end
+
+  def get_meals_since_sunday
     last_sunday_night = Date.today.beginning_of_week(:monday).to_datetime.change(hour: 1)
     meals = self.meals.order(created_at: :desc)
     meals.select { |m| m.created_at > last_sunday_night }

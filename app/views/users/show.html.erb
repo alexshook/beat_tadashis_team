@@ -1,7 +1,7 @@
   <div class="row">
   <div class="small-2 columns top-padding">
     <div class="small-avatar-wrap">
-      <a href="<%= user_path(current_user) %>"><%= image_tag @user.profile_photo.url(:medium), :style => "max-width: 100%;" %></a>
+      <a href="<%= user_path(current_user) %>"><%= image_tag current_user.profile_photo.url(:medium), :style => "max-width: 100%;" %></a>
     </div>
   </div>
   <div class="small-8 small-offset-1 columns top-padding welcome-name">
@@ -12,29 +12,29 @@
 <div class="small-12 columns" align="center">
   <div class="show-template">
     <div class="small-12 small-centered columns">
-  	<% if @meal %>
+  	<% if @added_meal_today == true %>
     	<h2>Today's Meal:</h2>
   		<%#= link_to image_tag(@meal.meal_photo.url(:medium), class: "todays-meal"), @meal %>
     <!-- jason's link fix, changed the max-width to 120% for better photo display -->
       <div class="meal-pic-wrapper">
-		    <a href="<%= meal_path(@meal) %>"><%= image_tag @meal.meal_photo.url, class: 'meal-pic', :style => "max-width: 120%;" %></a>
+		    <a href="<%= meal_path(@todays_meal) %>"><%= image_tag @todays_meal.meal_photo.url, class: 'meal-pic', :style => "max-width: 120%;" %></a>
       </div>
     <!-- end jason's link fix -->
   		<div>
-  			<% if @meal.rating %>
-  				<%= @meal.rating %>
-  				<%= render partial:'star', locals: {rating: @meal.rating} %>
-  				<i class="fa fa-trophy"></i> <%= @company_meals.find_index(@meal) %>
+  			<% if @todays_meal.rating %>
+  				<%= @todays_meal.rating %>
+  				<%= render partial:'star', locals: {rating: @todays_meal.rating} %>
+  				<i class="fa fa-trophy"></i> <%= @company_meals.find_index(@todays_meal) %>
   			<% else %>
   				"No Ratings Yet"
-  			<% end %>
+  			<% end %><!-- end if @meal.rating -->
   		</div>
 	<% else %>
 		<div class="chef-hat">
 			<%= link_to image_tag("chefhat.png"), new_meal_path %>
 		</div>
 		<h2><%= link_to "Hey chef, what did you make today?", new_meal_path, class: 'centered-text' %></h2>
-  <% end %>
+  <% end %><!-- end if added_meal_today == true -->
 </div>
 
 <div class="row">
