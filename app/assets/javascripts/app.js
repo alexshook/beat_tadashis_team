@@ -29,12 +29,12 @@ function startVoting(){
 }
 
 function appendMeal(meal, image, goalName){
-  $('#vote-meal-pic').empty().append("<img src=" + image + "/>");
+  $('#vote-meal-pic').empty().append("<img src=" + image + " style='max-width: 50%;' />");
   $('#vote-meal-goalname').append('<p><p>').html("<strong>Goal Category: </strong>" + goalName);
   $('#vote-meal-comment').append('<p></p>').html("<strong>Comment: </strong>" + meal.comment);
   $('#vote-meal-ingredients').append('<p></p>').html("<strong>Description: </strong>" + meal.ingredients);
 
-  $('#vote-meal-nutrition').append('<p></p>').html("<strong>Calories: </strong>" + meal.calories + "<br>" + "<strong>Fat: </strong>" + meal.fat + "g<br>" + "<strong>Protein: </strong>" + meal.protein + " g<br>" + "<strong>Fiber: </strong>" + meal.fiber + "g<br>" + "<strong>Sugar: </strong>" + meal.sugar + "g<br>" + "<strong>Carbs: </strong>" + meal.carbs + "g<br>" + "<strong>Sodium: </strong>" + meal.sodium + "mg");
+  $('#vote-meal-nutrition').append('<p></p>').html("<strong>Calories: </strong>" + (meal.calories || "N/A") + "<br>" + "<strong>Fat: </strong>" + (meal.fat || "N/A") + " g<br>" + "<strong>Protein: </strong>" + (meal.protein || "N/A") + " g<br>" + "<strong>Fiber: </strong>" + (meal.fiber || "N/A") + " g<br>" + "<strong>Sugar: </strong>" + (meal.sugar || "N/A") + " g<br>" + "<strong>Carbs: </strong>" + (meal.carbs || "N/A") + " g<br>" + "<strong>Sodium: </strong>" + (meal.sodium || "N/A") + " mg");
 
   for (var i = 1; i <= 5; i++){
     $('#rating-' + i).attr('onclick', 'addRating(' + i + ', ' + meal.id + ')');
@@ -52,6 +52,7 @@ function addRating(num, mealID){
     }
   }).done(function(data){
     $('.vote-template').toggle('slide', {direction: 'left'}, 350);
+    window.scrollTo(0, 0);
     startVoting();
   });
 }

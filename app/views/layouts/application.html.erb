@@ -26,17 +26,16 @@
         <!-- Right Nav Section -->
         <ul class="right">
           <li class="active"><a href="/">Homepage</a></li>
-          <li class="active"><a href="/#vote">Voting</a></li>
           <li class="active"><a href="/meals/new">Create A Meal</a></li>
           <li class="active"><a href="/ratings">Leaderboard</a></li>
           <% if current_user %>
+            <% if current_user.admin %>
+             <li class="active">
+              <%= link_to "Company Data", companies_path %>
+              </li>
+            <% end %>
            <li class="active">
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-            </li>
-          <% end %>
-          <% if current_user && current_user.admin %>
-           <li class="active">
-            <%= link_to "Company Data", companies_path %>
             </li>
           <% end %>
 

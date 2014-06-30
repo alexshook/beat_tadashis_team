@@ -22,7 +22,7 @@
     <!-- end jason's link fix -->
   		<div>
   			<% if @todays_meal.rating %>
-  				<%= @todays_meal.rating %>
+  				<%= @todays_meal.rating.round(2) %>
   				<%= render partial:'star', locals: {rating: @todays_meal.rating} %>
   				<i class="fa fa-trophy"></i> <%= @company_meals.find_index(@todays_meal) %>
   			<% else %>
@@ -37,9 +37,17 @@
   <% end %><!-- end if added_meal_today == true -->
 </div>
 
+<div class="small-10 small-centered columns top-padding">
+  <button class='radius' id="vote">Rate Lunches</button>
+</div>
+
+<div class="row">
+  <div class="small-10 small-centered columns" >
+    <h3 class="center-text bottom-padding">My Meals This Week</h3>
+  </div>
+</div>
 <div class="row">
 	<div class="small-10 small-centered columns" >
-		<h3 class="center-text bottom-padding">My Meals This Week</h3>
 			<% i = 0 %>
 			<% @meals.each do |meal| %>
       <div class="small-12 small-centered columns">
@@ -54,10 +62,6 @@
 		<% end %>
 	</div>
 </div>
-
-  <div class="small-10 small-centered columns">
-  	<button id="vote">Rate Lunches</button>
-  </div>
 </div>
 </div>
 
@@ -100,7 +104,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="small-10 small-centered columns top-padding center-text">
+    <div class="small-10 small-centered columns top-padding big-bottom-padding center-text">
         <span class="star-rating">
           <input type="radio" name="rating" id="rating-1"><i></i>
           <input type="radio" name="rating" id="rating-2"><i></i>
@@ -134,7 +138,7 @@
   </div>
   <div class="row">
     <div class="small-12 small-centered columns center-text" id="vote-meal-pic">
-      <img src="http://www.rawstory.com/rs/wp-content/uploads/2012/08/I-Voted-via-Shutterstock-615x345.jpg" />
+      <img style="max-width: 50%;" src="http://www.rawstory.com/rs/wp-content/uploads/2012/08/I-Voted-via-Shutterstock-615x345.jpg" />
     </div>
   </div>
 
