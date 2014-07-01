@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-
+include CompaniesHelper
 	def index
 		@user = current_user
 		if !@user.admin
