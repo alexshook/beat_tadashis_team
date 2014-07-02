@@ -16,10 +16,20 @@ class MealsController < ApplicationController
     meal = Meal.create(meal_params)
     current_user.meals << meal
     current_user.company.meals << meal
-    data = Meal.check_nutritional_facts(params[:meal][:ingredients])
+    data = {
+      "energy" => (0..1050).to_a.sample,
+      "total fat" => (0..50).to_a.sample,
+      "proteins" => (0..25).to_a.sample,
+      "total fibres" => (0..25).to_a.sample,
+      "sugar" => (0..80).to_a.sample,
+      "sodium" => (0..50).to_a.sample,
+      "total carbs" => (0..300).to_a.sample
+    }
+    # data = Meal.check_nutritional_facts(params[:meal][:ingredients])
     meal.update(
-      ingredients: params[  :meal][:ingredients],
-      calories: data["energy"], fat: data["total fat"],
+      ingredients: params[:meal][:ingredients],
+      calories: data["energy"],
+      fat: data["total fat"],
       protein: data["proteins"],
       fiber: data["total fibres"],
       sugar: data["sugar"],

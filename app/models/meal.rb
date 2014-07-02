@@ -19,19 +19,6 @@ class Meal < ActiveRecord::Base
     else
       ingredients_array.push(ingredients_string.downcase)
     end
-
-    # check each element in array and split on with and remove and
-    ingredients_array.each do |string|
-      if string.include? "with "
-        string.split("with ")
-      end
-      if string.include? "and "
-        string.slice!("and ")
-      end
-    end
-
-    # flatten array
-    ingredients_array.flatten!
     ingredients_array.each do |string|
       string.gsub!(" ", "+")
     end
