@@ -31,3 +31,13 @@ Companies can see best rated meals from their employees and what their employees
 #####[Heroku-App: better on Mobile](http://ratemylunch.herokuapp.com/)
 
 #####[Hack//Dining NYC Hackathon Project](https://www.hackerleague.org/hackathons/hack-slash-slash-dining-nyc/hacks/ratemylunch)
+
+---
+
+### Team Members: 
+
+* [Paul Lee](https://github.com/pjwl33)
+* [Jason Leibowitz](https://github.com/jasonleibowitz)
+* [Stephen Marsh](https://github.com/stephenhmarsh)
+* [Jesse Sessler](https://github.com/jemise111)
+* [Alex Shook](https://github.com/alexshook)
