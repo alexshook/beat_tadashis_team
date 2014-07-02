@@ -9,7 +9,7 @@ class MealsController < ApplicationController
 
   def new
     @meal = Meal.new
-    @goals = Goal.all
+    @company_goals = current_user.company.goals
   end
 
   def create

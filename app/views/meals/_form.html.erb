@@ -14,7 +14,7 @@
 
       <div class="field">
         <%= f.label :goal_id %>
-        <%= f.select :goal_id, @goals.collect {|goal| [goal.name, goal.id]} %>
+        <%= f.select :goal_id, @company_goals.collect {|goal| [goal.name, goal.id]} %>
       </div>
 
       <div class="field">
