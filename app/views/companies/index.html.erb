@@ -2,11 +2,11 @@
   <div class="small-10 small-centered columns">
 
   <h2>Company Goals</h2>
-    <% @company.goals.each do |goal| %>
       <ol>
+    <% @company.goals.each do |goal| %>
         <li><%= goal.name %></li>
-      </ol>
     <% end %>
+      </ol>
 
   <h4>Add a Company Goal</h4>
     <%= render 'goals/form' %>
