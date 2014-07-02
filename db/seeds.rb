@@ -8,6 +8,8 @@ g1 = Goal.create(name: 'Lose Weight', desc: 'Meals that encourage weight loss')
 g2 = Goal.create(name: 'Eat Healthy', desc: 'Well-balanced meals that hit all of the major food groups')
 g3 = Goal.create(name: 'Gain Muscle', desc: 'High protein, lean meals to help build muscle')
 
+c1.goals.push(g1, g2, g3)
+
 # ------------------------------------------------------------------
 
 u1 = User.create(email: 'jesse@ham.co', password: 'password',
