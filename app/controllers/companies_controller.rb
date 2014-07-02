@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
-include CompaniesHelper
+	include CompaniesHelper
+
 	def index
 		@user = current_user
 		if !@user.admin
@@ -8,6 +9,8 @@ include CompaniesHelper
 			@company_meals = Meal.where(company: @user.company).order(rating: :desc)
 			@best_meals = @company_meals.take(20)
 			@worst_meals = @company_meals.reverse.take(5)
+			@company = @user.company
+			@goal = Goal.new
 		end
 	end
 
