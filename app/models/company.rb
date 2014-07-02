@@ -1,6 +1,7 @@
 class Company < ActiveRecord::Base
   has_many :users
   has_many :meals
+  has_many :goals
 
   def meals_since_sunday
     last_sunday_night = Date.today.beginning_of_week(:monday).to_datetime.change(hour: 1)
