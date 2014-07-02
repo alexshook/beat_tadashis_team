@@ -15,7 +15,8 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :profile_photo, :content_type => /\Aimage\/.*\Z/
 
   def check_for_meal_today
-    todays_date = Time.now.end_of_day.utc.to_s.gsub(/\s.*/, '')
+    todays_date = Time.now.utc.to_s.gsub(/\s.*/, '')
+    # todays_date = Time.now.end_of_day.utc.to_s.gsub(/\s.*/, '')
     self.meals.last.created_at.to_s.include?(todays_date.gsub(/\s.*/, '')) ? true : false
   end
 
